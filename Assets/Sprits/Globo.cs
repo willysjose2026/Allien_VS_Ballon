@@ -43,11 +43,23 @@ public class Globo : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "TopWall")
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "TopWall")
+        if (collision.gameObject.tag == "Bullets")
         {
             Destroy(this.gameObject);
         }
     }
+
+
 }
