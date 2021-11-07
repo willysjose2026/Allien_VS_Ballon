@@ -16,4 +16,6 @@ public class Disparar : MonoBehaviour
             Instantiate(DispararPrefab, DispararY.position, Quaternion.identity);
         }
     }
+
+
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Globo : MonoBehaviour
 {
@@ -10,10 +11,15 @@ public class Globo : MonoBehaviour
 
     private Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
+    public Text score;
     private int Puntaje;
 
     void Start()
     {
+
+        //Puntaje = 0;
+        //score.text = "Score: " + score;
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -38,21 +44,8 @@ public class Globo : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.tag == "TopWall")
-        {
-            Destroy(this.gameObject);
-        }
-
-    }
-
+    
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Bullets")
